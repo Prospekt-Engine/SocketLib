@@ -1,0 +1,28 @@
+//-----------------------------------------------------------------------------
+//	SOCKETLIB.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$macro SRCDIR		".."
+
+$include "$SRCDIR\vpc_scripts\source_lib_base.vpc"
+
+$Configuration
+{
+    $General
+    {
+		$AdditionalProjectDependencies                  "$BASE;togl"  [!$IS_LIB_PROJECT && $GL]
+	}
+}
+
+$Project "SocketLib"
+{
+	$Folder	"Source Files"
+	{
+		$File	"src/OpenSSLWraper.cpp"
+		$File	"src/SocketLip.cpp"
+		$File	"src/SslSocket.cpp"
+        $File   "src/StdSocket.cpp"
+	}
+}
